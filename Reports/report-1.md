@@ -8,7 +8,7 @@ Boulder Dash gra komputerowa w której celem jest zdobycie odpowiedniej liczby d
 
 ## Opis funkcjonalny
 
-- ruch i akcje wykonywane przez gracza (poruszanie, zbieranie przedmiotów, przesówanie obiektow)
+- ruch i akcje wykonywane przez gracza (poruszanie, zbieranie przedmiotów, przesuwanie obiektow)
 - zmiana położenia kamieni
 - akcja wywołana po zniszczeniu motyla (zmiana obiektów w diamenty)
 - akcja wywołana po zniszczeniu ducha (wybuch)
