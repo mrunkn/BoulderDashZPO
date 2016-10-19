@@ -26,11 +26,41 @@ Boulder Dash gra komputerowa w której celem jest zdobycie odpowiedniej liczby d
 
 ## Specjalizacja funkcji
 
-1. Po uruchomieniu gry graczowi wyświetlony zostanie widok z menu głównym na którym będzie można dokonać konfiguracji rozgrywki.
-2. Widok z głowną częścią gry będzie się składał "headera" gdzie bedą znajdowały się informacje o rozgrywce m.in. liczba zebranych diamentów, pozostały czas i liczba uzyskanych punktów. Element ten będzie wyświetlany na górze okna.
-Poniżej wyświetlanie zostanie mapa/plansza umożliwiająca rozgrywkę. Jej rozmiar będzie uzależniony od poziomu na którym znajduje się gracz.
-Gracz będzie sterował postacią przy pomocy strzałek na klawiaturze (ruch w góra/dół, lewo/prawo).
-3. Celem gracza jest dojście do wyjścia które pojawi sie dopiero po zebraniu odpowiedniej liczby diamentów. Aby tego dokonać musi umiejetnie poruszać sie po mapie "oczyszczając" sobie drogę. Poruszając sie musi uważać na duchy i motyle które może zniszczyć przy wykorzystaniu spadających kamieni. Po zniszczeniu ducha następuje wybuch który niszczy obiekty w promieniu 3 pól, natomiast po zniszczeniu motyla pojawia się 9 diamentów.
+1. Ruch i akcje wykonywane przez gracza: gracz moze poruszać się w prawo, lewo, góre i dół oraz wywoływać akcję na obiektach (np. przesuwanie kamieni, zbieranie diamentów)
+2. Akcja wywołana po zniszczeniu motyla: zniszczenie motyla za pomocą kamienia powoduje pojawienie się dodatkowych diamentów (9).
+3. Akcja wywołana po zniszczeniu ducha: zniszczenie ducha wywołuje wybuch który niszczy obiekty w zasięgu 6 pól.
+4. Zmiana poziomu lawy: lawa rośnie wraz z upływem czasu jeśli uda się ja zablokować zamienia się w diamenty.
+5. "Oczyszczenie" planszy z trawy: przejście gracza "oczyszcza teren z trawy".
+6. Akcja bomby: zebranie bomby aktywuje wybuch który potrafi niszczyc mury.
+7. Aktualizacja czasu: w górnej części ekranu wyświetlany jest zegar odliczający pozostały czas na przejście poziomu.
+8. Aktualizacja liczby diamentów: w górnej części ekranu wyświetlany jest licznik diamentów który aktualizowany każdorazowo po zebraniu diamentu.
+9. Odkrycie wyjścia: uzyskanie odpowiedniej liczby diamentów (zależnej od poziomu) powoduje otwarcie wyjścia konczącego poziom.
+
 
 ## Projekt interfejsu
-...
+
+```
+----------------------------------------------------------
+|Diamenty: 002       WYJŚCIE OTWARTE            Czas: 100|
+|####################################DD##################|
+|##   ##### #######D###################D##D#####D########|
+|###  @    O  ######################DD###################|
+|################O##################DD###################|
+|###########O########################D###################|
+|#################  ? #########################!#########|
+|############################O###########################|
+|######D#########D#######################################|
+|##############D#####   #######!################!########|
+|################### M  #################################|
+|#######################################################E|
+----------------------------------------------------------
+
+@ - gracz
+O - kamień
+M - motyl
+! - bomba
+? - duch
+# (zielony) - trawa
+# (brązowy) - mur
+E - wyjście
+```
