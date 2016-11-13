@@ -7,11 +7,9 @@
 #include "Game.h"
 #include "ConsoleHelpers.h"
 
-#define KEY_UP 72
-#define KEY_DOWN 80
-#define	KEY_LEFT 75
-#define KEY_RIGHT 77
-#define ESC 27
+#include "DiamondModel.hpp"
+#include "DiamondController.hpp"
+#include "DiamondView.hpp"
 
 void generateInitialMap(char(&map)[MAP_Y][MAP_X]) {
 	for (int y = 0; y < MAP_Y; ++y)
@@ -43,6 +41,10 @@ void Game::generateMap(char(&map)[MAP_Y][MAP_X])
 	{
 		for (int x = 0; x < MAP_X; ++x)
 		{
+			if (map[y][x] == 'D') {
+				auto model = std::make_shared<DiamondModel>(y, x);
+				objects.push_back(std::make_shared<DiamondController>(model, std::make_shared<DiamondView>(model)));
+			}
 			std::cout << map[y][x];
 		}
 		std::cout << "\n";
@@ -54,31 +56,10 @@ void Game::startLoop() {
 
 	while (active)
 	{
-		if (_kbhit()) {
-			switch (_getch())
-			{
-			case KEY_UP:
-				player->moveUp();
-				break;
-			case KEY_DOWN:
-				player->moveDown();
-				break;
-			case KEY_LEFT:
-				player->moveLeft();
-				break;
-			case KEY_RIGHT:
-				player->moveRigth();
-				break;
-			case ESC:
-				active = false;
-				break;
-			default:
-				break;
-			}
-		}
+		player->listenKey(active, objects);
 	}
 
-		Sleep(1);
+	Sleep(1);
 }
 
 void Game::init()

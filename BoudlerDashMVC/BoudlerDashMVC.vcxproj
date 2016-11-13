@@ -147,6 +147,12 @@
   <ItemGroup>
     <ClInclude Include="ConsoleHelpers.cpp" />
     <ClInclude Include="ConsoleHelpers.h" />
+    <ClInclude Include="DiamondController.hpp" />
+    <ClInclude Include="DiamondModel.hpp" />
+    <ClInclude Include="DiamondView.hpp" />
+    <ClInclude Include="GameObjectController.hpp" />
+    <ClInclude Include="GameObjectModel.hpp" />
+    <ClInclude Include="GameObjectView.hpp" />
     <ClInclude Include="PlayerController.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Listener.h" />
@@ -157,6 +163,12 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DiamondController.cpp" />
+    <ClCompile Include="DiamondModel.cpp" />
+    <ClCompile Include="DiamondView.cpp" />
+    <ClCompile Include="GameObjectController.cpp" />
+    <ClCompile Include="GameObjectModel.cpp" />
+    <ClCompile Include="GameObjectView.cpp" />
     <ClCompile Include="PlayerController.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="main.cpp" />

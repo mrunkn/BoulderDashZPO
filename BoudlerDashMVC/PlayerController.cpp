@@ -1,10 +1,16 @@
 #include "stdafx.h"
 
 #include <memory>
+#include <conio.h>
 
 #include "PlayerController.h"
 #include "PlayerModel.h"
 
+const int KEY_UP = 72;
+const int KEY_DOWN = 80;
+const int KEY_LEFT = 75;
+const int KEY_RIGHT = 77;
+const int ESC = 27;
 
 PlayerController::PlayerController()
 {
@@ -54,5 +60,30 @@ void PlayerController::moveUp()
 
 	if (y) {
 		model->changePosition(x, --y);
+	}
+}
+
+void PlayerController::listenKey(bool& active, std::vector<std::shared_ptr<GameObjectController>>& objects) {
+	if (_kbhit()) {
+		switch (_getch())
+		{
+		case KEY_UP:
+			moveUp();
+			break;
+		case KEY_DOWN:
+			moveDown();
+			break;
+		case KEY_LEFT:
+			moveLeft();
+			break;
+		case KEY_RIGHT:
+			moveRigth();
+			break;
+		case ESC:
+			active = false;
+			break;
+		default:
+			break;
+		}
 	}
 }

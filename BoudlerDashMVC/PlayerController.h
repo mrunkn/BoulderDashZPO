@@ -4,6 +4,7 @@
 
 #include "PlayerModel.h"
 #include "PlayerView.h"
+#include "GameObjectController.hpp"
 
 class PlayerController
 {
@@ -18,5 +19,6 @@ public:
 	void moveLeft();
 	void moveDown();
 	void moveUp();
+	void listenKey(bool & active, std::vector<std::shared_ptr<GameObjectController>>& objects);
 };
 
